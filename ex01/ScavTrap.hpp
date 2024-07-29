@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 13:29:12 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/29 16:20:18 by lbohm            ###   ########.fr       */
+/*   Created: 2024/07/29 15:06:06 by lbohm             #+#    #+#             */
+/*   Updated: 2024/07/29 16:13:25 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class	ScavTrap: public ClapTrap
 {
-	ClapTrap	a("Luca");
-	ClapTrap	b("Tom");
+	public:
+		ScavTrap(void);
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const &cpy);
+		~ScavTrap(void);
+		ScavTrap	&operator= (ScavTrap const &cpy);
+		void	guardGate(void);
+		void	attack(std::string const &target);
+};
 
-	a.attack(b.getName());
-	b.takeDamage(a.getAd());
-	b.beRepaired(5);
-	b.attack(a.getName());
-	a.takeDamage(b.getAd());
-	a.beRepaired(5);
-}
+#endif

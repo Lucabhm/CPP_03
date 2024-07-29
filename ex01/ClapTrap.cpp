@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:29:17 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/29 16:20:03 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/07/29 16:23:31 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 ClapTrap::ClapTrap(void)
 {
-	std::cout << "Defalut Constructor called" << std::endl;
+	std::cout << "ClapTrap defalut Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "Constructor with name attribut called" << std::endl;
+	std::cout << "ClapTrap Constructor with name attribut called" << std::endl;
 	this->name = name;
 	this->hp = 10;
 	this->ep = 1;
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(ClapTrap const &cpy)
 {
-	std::cout << "Copy Constructor called" << std::endl;
+	std::cout << "ClapTrap copy Constructor called" << std::endl;
 	*this = cpy;
 }
 
@@ -38,14 +38,14 @@ ClapTrap::ClapTrap(ClapTrap const &cpy)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Default Destructor called" << std::endl;
+	std::cout << "ClapTrap default Destructor called" << std::endl;
 }
 
 // operator
 
 ClapTrap	&ClapTrap::operator= (ClapTrap const &cpy)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 	if (this != &cpy)
 	{
 		this->name = cpy.name;
@@ -96,10 +96,30 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 }
 
-std::string	ClapTrap::getName(void){return (name);}
+std::string	ClapTrap::getName(void) const {return (name);}
 
-int	ClapTrap::getHp(void){return (hp);}
+int	ClapTrap::getHp(void) const {return (hp);}
 
-int	ClapTrap::getEp(void){return (ep);}
+int	ClapTrap::getEp(void) const {return (ep);}
 
-int	ClapTrap::getAd(void){return (ad);}
+int	ClapTrap::getAd(void) const {return (ad);}
+
+void	ClapTrap::setName(std::string name)
+{
+	this->name = name;
+}
+
+void	ClapTrap::setHp(int value)
+{
+	hp = value;
+}
+
+void	ClapTrap::setEp(int value)
+{
+	ep = value;
+}
+
+void	ClapTrap::setAd(int value)
+{
+	ad = value;
+}
