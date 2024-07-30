@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 15:24:41 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/30 12:18:14 by lbohm            ###   ########.fr       */
+/*   Created: 2024/07/30 10:36:53 by lbohm             #+#    #+#             */
+/*   Updated: 2024/07/30 11:21:43 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-int	main(void)
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
+
+class	DiamondTrap : public ScavTrap, public FragTrap
 {
-	ScavTrap	a("Luca");
-	ScavTrap	b("Tom");
+	private:
+		std::string name;
+	public:
+		DiamondTrap();
+		DiamondTrap(std::string name);
+		DiamondTrap(DiamondTrap const &cpy);
+		~DiamondTrap();
+		DiamondTrap	&operator= (DiamondTrap const &cpy);
+		void	whoAmI(void);
+};
 
-	a.attack(b.getName());
-	b.takeDamage(a.getAd());
-	a.guardGate();
-	b.beRepaired(5);
-	b.attack(a.getName());
-	a.takeDamage(b.getAd());
-	a.beRepaired(5);
-}
+#endif

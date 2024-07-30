@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:29:17 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/29 16:23:31 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/07/30 12:06:21 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 ClapTrap::ClapTrap(void)
 {
 	std::cout << "ClapTrap defalut Constructor called" << std::endl;
+	this->hp = 10;
+	this->ep = 10;
+	this->ad = 0;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -24,8 +27,8 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << "ClapTrap Constructor with name attribut called" << std::endl;
 	this->name = name;
 	this->hp = 10;
-	this->ep = 1;
-	this->ad = 5;
+	this->ep = 10;
+	this->ad = 0;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &cpy)
@@ -60,19 +63,17 @@ ClapTrap	&ClapTrap::operator= (ClapTrap const &cpy)
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if (ep != 0)
+	if (hp > 0 && ep > 0)
 	{
 		std::cout << "ClapTrap " << name << " attacks " << target << " causing " \
 		<< ad << " points of damage!" << std::endl;
 		ep--;
 	}
-	else
-		std::cout << "ClapTrap " << name << " has no Energy points" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (ep != 0)
+	if (hp > 0 && ep > 0)
 	{
 		std::cout << "ClapTrap " << name << " get attacked and lost " << amount
 		<< " health Points" << std::endl;

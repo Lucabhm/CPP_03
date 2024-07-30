@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:29:15 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/29 16:22:27 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/07/30 12:24:16 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class	ClapTrap
 {
-	private:
+	protected:
 		std::string	name;
 		int			hp;
 		int			ep;

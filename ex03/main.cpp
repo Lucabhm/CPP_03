@@ -5,23 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 15:24:41 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/30 12:18:14 by lbohm            ###   ########.fr       */
+/*   Created: 2024/07/30 11:08:15 by lbohm             #+#    #+#             */
+/*   Updated: 2024/07/30 11:34:59 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	ScavTrap	a("Luca");
-	ScavTrap	b("Tom");
+	DiamondTrap	a("Luca");
+	DiamondTrap	b("Tom");
 
-	a.attack(b.getName());
+	a.ScavTrap::attack(b.getName());
 	b.takeDamage(a.getAd());
-	a.guardGate();
+	a.whoAmI();
 	b.beRepaired(5);
-	b.attack(a.getName());
+	b.ScavTrap::attack(a.getName());
 	a.takeDamage(b.getAd());
 	a.beRepaired(5);
 }

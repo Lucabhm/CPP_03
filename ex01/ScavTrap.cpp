@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 15:06:03 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/29 16:24:45 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/07/30 12:07:35 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 ScavTrap::ScavTrap(void)
 {
 	std::cout << "ScavTrap default Constructor called" << std::endl;
-	
+	this->setHp(100);
+	this->setEp(50);
+	this->setAd(20);
 }
 
 ScavTrap::ScavTrap(std::string name)
@@ -66,12 +68,10 @@ void	ScavTrap::guardGate(void)
 
 void	ScavTrap::attack(std::string const &target)
 {
-	if (this->getEp() != 0)
+	if (this->getEp() && this->getHp())
 	{
 		std::cout << "ScavTrap " << this->getName() << " attacks " << target << " causing " \
 		<< this->getAd() << " points of damage!" << std::endl;
 		this->setEp(this->getEp() - 1);
 	}
-	else
-		std::cout << "ScavTrap " << this->getName() << " has no Energy points" << std::endl;
 }

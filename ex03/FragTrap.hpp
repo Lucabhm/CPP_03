@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 15:24:41 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/30 12:18:14 by lbohm            ###   ########.fr       */
+/*   Created: 2024/07/29 16:31:13 by lbohm             #+#    #+#             */
+/*   Updated: 2024/07/30 12:31:03 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class FragTrap: virtual public ClapTrap
 {
-	ScavTrap	a("Luca");
-	ScavTrap	b("Tom");
+	public:
+		FragTrap(void);
+		FragTrap(std::string name);
+		FragTrap(FragTrap const &cpy);
+		~FragTrap();
+		FragTrap	&operator= (FragTrap const &cpy);
+		void	highFivesGuys(void);
+};
 
-	a.attack(b.getName());
-	b.takeDamage(a.getAd());
-	a.guardGate();
-	b.beRepaired(5);
-	b.attack(a.getName());
-	a.takeDamage(b.getAd());
-	a.beRepaired(5);
-}
+#endif
