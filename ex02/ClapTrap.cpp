@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:29:17 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/30 12:08:13 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/08/01 09:49:32 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 ClapTrap::ClapTrap(void)
 {
 	std::cout << "ClapTrap defalut Constructor called" << std::endl;
+	this->name = "Default";
 	this->hp = 10;
 	this->ep = 10;
 	this->ad = 0;
