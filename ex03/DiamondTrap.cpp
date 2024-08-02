@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 10:36:50 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/30 12:33:57 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/08/02 14:54:06 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 DiamondTrap::DiamondTrap(void)
 {
 	std::cout << "DiamondTrap defalut Constructor called" << std::endl;
+	this->name = "Default";
+	ClapTrap::setName("Default_clap_name");
+	this->setHp(FragTrap::getHp());
+	this->setEp(ScavTrap::getEp());
+	this->setAd(FragTrap::getAd());
 }
 
 DiamondTrap::DiamondTrap(std::string name)
@@ -50,6 +55,10 @@ DiamondTrap	&DiamondTrap::operator= (DiamondTrap const &cpy)
 	if (this != &cpy)
 	{
 		this->name = cpy.name;
+		this->ClapTrap::setName(cpy.ClapTrap::getName());
+		this->ep = cpy.ep;
+		this->hp = cpy.hp;
+		this->ad = cpy.ad;
 	}
 	return (*this);
 }
@@ -60,4 +69,9 @@ void	DiamondTrap::whoAmI(void)
 {
 	std::cout << "DiamondTrap my name is " << this->name <<
 	" and the name of my ClapTrap is " << ClapTrap::getName() << std::endl;
+}
+
+void	DiamondTrap::attack(std::string const &target)
+{
+	ScavTrap::attack(target);
 }

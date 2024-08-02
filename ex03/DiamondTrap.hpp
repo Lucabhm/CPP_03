@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 10:36:53 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/30 12:57:58 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/08/02 14:37:34 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class	DiamondTrap : public ScavTrap, public FragTrap
 		~DiamondTrap();
 		DiamondTrap	&operator= (DiamondTrap const &cpy);
 		void	whoAmI(void);
+		void	attack(const std::string& target);
 };
 
 #endif
