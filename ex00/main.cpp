@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:29:12 by lbohm             #+#    #+#             */
-/*   Updated: 2024/07/29 16:20:18 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/08/02 13:02:37 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ int	main(void)
 	a.attack(b.getName());
 	b.takeDamage(a.getAd());
 	b.beRepaired(5);
-	b.attack(a.getName());
-	a.takeDamage(b.getAd());
-	a.beRepaired(5);
+	if (b.getEp() > 0 && b.getHp() > 0)
+	{
+		b.attack(a.getName());
+		a.takeDamage(b.getAd());
+		a.beRepaired(5);
+	}
+	return (0);
 }

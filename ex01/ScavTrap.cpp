@@ -6,7 +6,7 @@
 /*   By: lbohm <lbohm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 15:06:03 by lbohm             #+#    #+#             */
-/*   Updated: 2024/08/01 09:48:26 by lbohm            ###   ########.fr       */
+/*   Updated: 2024/08/02 13:14:42 by lbohm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 ScavTrap::ScavTrap(void)
 {
 	std::cout << "ScavTrap default Constructor called" << std::endl;
+	this->name = "Default";
 	this->setHp(100);
 	this->setEp(50);
 	this->setAd(20);
